@@ -9,11 +9,6 @@ html{
     margin: 0;
     box-sizing: border-box;
 }
-body{
-    padding-left: 150px;
-    padding-right: 150px;
-    padding-top: 20px;
-}
 
 /* css for nav-bar */
 
@@ -31,7 +26,7 @@ a{
 } 
 
 .nav__menu-list{
-    display: flex;
+    
     align-items: center;
     justify-content: center;
     flex-direction: row;
@@ -65,9 +60,11 @@ a{
     width: 100%;
 }
 
-.nav__menu-bar{
-    visibility: hidden;
-}
-
-@media screen and (min-width: 1064px){
+.drawer__menu-items{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    gap: 20px;
 }

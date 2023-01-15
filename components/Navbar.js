@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import Logo from "../public/logo.png";
+import menu from "../assets/menu.svg"
 import Link from "next/link";
 import NavItem from "./NavItem";
 import Drawer from "react-modern-drawer";
@@ -40,15 +41,15 @@ const Navbar = () => {
         </Link>
 
         {/* //have to currently work upon implementing responsive drawer */}
-        <div className="nav__menu-bar">
-          <button onClick={toggleDrawer}>Show</button>
+        <div className="nav__menu-bar lg:hidden">
+          <button onClick={toggleDrawer}><Image src={menu} width={20} height={20}></Image></button>
           <Drawer
             open={isOpen}
             onClose={toggleDrawer}
             direction="top"
             className="drawer"
           >
-            <div>
+            <div className="drawer__menu-items">
               {MENU_LIST.map((menu, idx) => {
                 return (
                   <div onClick={() => setActiveIdx(idx)} key={menu.text}>
@@ -60,7 +61,7 @@ const Navbar = () => {
           </Drawer>
         </div>
 
-        <div className="nav__menu-list">
+        <div className="nav__menu-list hidden lg:flex">
           {MENU_LIST.map((menu, idx) => {
             return (
               <div onClick={() => setActiveIdx(idx)} key={menu.text}>

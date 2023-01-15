@@ -4,9 +4,9 @@ import RightHeroSection from './RightHeroSection'
 
 function HeroSection() { 
   return (
-    <div className='h-[500px] flex'>
+    <div className='flex flex-col pt-[100px] items-center lg:flex-row'>
         <LeftHeroSection/>
-        <RightHeroSection/>
+        <RightHeroSection/> 
     </div>
   )
 }
